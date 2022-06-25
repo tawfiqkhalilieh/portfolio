@@ -1,0 +1,31 @@
+.footer {
+  align-items: center;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px 0;
+  max-width: 100vw;
+  min-height: 5vh;
+
+  .goUpSquare {
+    visibility: hidden;
+  }
+
+  .copyrights {
+    border-bottom: 3px solid #51df19;
+    color: #D5D5D5;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    max-height: 100px;
+  }
+}
+
+
