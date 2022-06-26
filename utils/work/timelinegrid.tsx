@@ -2,7 +2,8 @@ import Image from 'next/image'
 import {
   usLogo,
   altooroLogo,
-  discordLogo
+  discordLogo,
+  discord_avatar,
 } from '../../assets'
 import { getDate } from '../date'
 import styles from './timelinegrid.module.scss'
@@ -36,7 +37,7 @@ export function VTimelineGrid() {
           <p className={styles.cardContentDescription}>
             Loop:<br/><br/>
             1st Year: Some HTML and Basic of c# Programming Language.<br/><br/>
-            2nd Year: Operating Systems, Computer Networks and got more advanced in c#.<br/><br/>
+            2nd Year: Operating Systems, Computer Networks and got more advanced in c# and bash.<br/><br/>
             3nd Year: Mentoring as a Looper Mentor.
           </p>
         </div>
@@ -57,16 +58,16 @@ export function VTimelineGrid() {
               <Image
                 alt="discord freelancer"
                 src={discordLogo}
-                height={13}
-                width={55}/>
+                height={2}
+                width={45}/>
             <div className={styles.companyInfo}>
-              <h1 className={styles.companyTitle}><a href='https://discord.com'>Discord</a></h1>
+              <h1 className={styles.companyTitle}><a href='/'>freelancing</a></h1>
               <h2 className={styles.cardContentDetails}> </h2>
               <h2 className={styles.cardContentDetails}>08.2020 - 10.2020</h2>
             </div>
           </div>
           <p className={styles.cardContentDescription}>
-            Building discord bots & websites, for medium size discord servers.<br/>
+            Building discord bots & websites, for small medium size discord servers.<br/>
             <br/>
             Main responsibilities:<br/>
             - designing the frontend,<br/>
@@ -84,7 +85,6 @@ export function VTimelineGrid() {
         <h1>11.2021</h1>
         <h2>Working & learning Backend Web Development at Altooro</h2>
       </div>
-      <div className={styles.timelineGridItemAdjoiningCard}/>
       <div className={styles.timelineGridItem}/>
       <div className={styles.timelineGridItem}/>
       <div className={styles.timelineGridItemCard}>
@@ -117,6 +117,8 @@ export function VTimelineGrid() {
           </p>
         </div>
       </div>
+
+      <div className={styles.timelineGridItemAdjoiningCard}/>
 
       <div className={styles.timelineGridItem}/>
       <div className={styles.timelineGridItem}/>

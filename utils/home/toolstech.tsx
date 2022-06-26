@@ -33,6 +33,8 @@ import {
   yarnLogo,
   yarnLogoHover
 } from '../../assets'
+// todo: add - 
+//              cypress , subprocess , next , express , Jest , pyscript
 import styles from './toolstech.module.scss'
 
 export function VToolsTech() {
