@@ -11,7 +11,7 @@ export function VMenuBar(props: MenuBarProps) {
       <Link href={`/`}>
         <a className={styles.title}>
           <div className={styles.squareInitials}>
-            xt
+            taw
           </div>
           <h3 className={styles.name}>
             Tawfiq Khalilieh
