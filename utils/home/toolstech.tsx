@@ -31,10 +31,12 @@ import {
   windowsLogo,
   windowsLogoHover,
   yarnLogo,
-  yarnLogoHover
+  yarnLogoHover,
+  jestLogo,
+  jestLogoHover,
 } from '../../assets'
 // todo: add - 
-//              cypress , subprocess , next , express , Jest , pyscript
+//              cypress , subprocess , next , express , pyscript
 import styles from './toolstech.module.scss'
 
 export function VToolsTech() {
@@ -151,6 +153,13 @@ export function VToolsTech() {
           width="60px"
           name="Sass"
           tooltipID="sass-tooltip" />
+        <VIcon
+          defaulIcon={jestLogo}
+          onHoverIcon={jestLogoHover}
+          height="60px"
+          width="60px"
+          name="Jest"
+          tooltipID="jest-tooltip" />
       </div>
     </div>
   )

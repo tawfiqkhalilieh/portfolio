@@ -35,17 +35,20 @@ export default function VHome() {
             </div>
           </div>
           <div className={styles.swipeDownIcon}>
+            <a href="#WorkHistory">
             <Image
               alt="Chevron down icon."
               src={chevronDown}
               width="40px"
               height="15px"/>
+              </a>
           </div>
+          
         </div>
         <div className={styles.workHistory}>
           <div className={styles.linkBox}>
             <Fade>
-              <h1 className={styles.linkBoxTitle}>Work<br/>History</h1>
+              <h1 className={styles.linkBoxTitle} id="WorkHistory">Work<br/>History</h1>
               <h2 className={styles.linkBoxTextContent}>
                 Here, you can learn more about the companies I&apos;ve collaborated with, projects I&apos;ve been part of, and the technologies I use every day.</h2>
               <Link href={`/work`}>
