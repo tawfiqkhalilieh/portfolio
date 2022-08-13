@@ -17,7 +17,7 @@ export function VFooter() {
         <VIcon
           defaulIcon={linkedInLogo}
           onHoverIcon={linkedInLogoHover}
-          href="https://www.linkedin.com/in/tawfiq-khalilieh-b90b22233/"
+          href="https://www.linkedin.com/in/tawfiq-khalilieh/"
           height="30px"
           width="30px"
           name="LinkedIn"/>
