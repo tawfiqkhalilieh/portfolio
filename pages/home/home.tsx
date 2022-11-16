@@ -6,10 +6,14 @@ import { VFooter, VMainHeader, VMenuBar, VToolsTech } from "../../utils";
 import { chevronDown } from "../../assets";
 import { profilePicture } from "../../assets";
 import styles from "./home.module.scss";
+import Head from "next/head";
 
 export default function VHome() {
   return (
     <div className={styles.homeContainer}>
+      <Head>
+        <title>Tawfiq Khalilieh</title>
+      </Head>
       <VMenuBar activeTab="Home" />
       <div className={styles.content}>
         <div className={styles.intro}>
