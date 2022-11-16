@@ -20,9 +20,8 @@ export default function VShowcase() {
     <div className={styles.showcaseContainer}>
       <Head>
         <title>Showcase</title>
-        <link rel="icon" href="me.jpg" type="image/jpg" />
-        <VMenuBar activeTab="showcase" />
       </Head>
+      <VMenuBar activeTab="Showcase" />
       <div className={styles.content}>
         <div className={styles.summary}>
           <Fade>
@@ -40,9 +39,7 @@ export default function VShowcase() {
             <div className={styles.card}>
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="#">
-                    <h2>The Other Me</h2>
-                  </a>
+                  <h2>The Other Me</h2>
 
                   <p>
                     Simple ML model I am currently working on that answers my
@@ -61,12 +58,15 @@ export default function VShowcase() {
               </div>
             </div>
 
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onClick={() => {
+                window.open("https://pypi.org/project/long-list/");
+              }}
+            >
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="https://pypi.org/project/long-list/">
-                    <h2>Long List</h2>
-                  </a>
+                  <h2>Long List</h2>
 
                   <p>
                     I created this simple infinity long list because I faced a
@@ -85,12 +85,17 @@ export default function VShowcase() {
               </div>
             </div>
 
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onClick={() => {
+                window.open(
+                  "https://tawfiqkhalilieh.github.io/Sorting-Algorithms-p5/"
+                );
+              }}
+            >
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="https://tawfiqkhalilieh.github.io/Sorting-Algorithms-p5/">
-                    <h2>Sorting Visualizer</h2>
-                  </a>
+                  <h2>Sorting Visualizer</h2>
 
                   <p>Sorting algorithm visualizer built with p5.js</p>
 
@@ -105,13 +110,17 @@ export default function VShowcase() {
               </div>
             </div>
 
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onClick={() => {
+                window.open(
+                  "https://github.com/tawfiqkhalilieh/SocialMedia-fastapi-dynamo"
+                );
+              }}
+            >
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="https://github.com/tawfiqkhalilieh/SocialMedia-fastapi-dynamo">
-                    <h2>Social Media</h2>
-                  </a>
-
+                  <h2>Social Media</h2>
                   <p>
                     Simple Social Media Backend built with FastAPI and dynamodb
                   </p>
@@ -127,12 +136,17 @@ export default function VShowcase() {
               </div>
             </div>
 
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onClick={() => {
+                window.open(
+                  "https://github.com/tawfiqkhalilieh/SocialMedia-fastapi-dynamo"
+                );
+              }}
+            >
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="https://github.com/tawfiqkhalilieh/SocialMedia-fastapi-dynamo">
-                    <h2>Function Visualizer</h2>
-                  </a>
+                  <h2>Function Visualizer</h2>
 
                   <p>
                     Basic function visualizer built with FastAPI and matplolib
@@ -149,12 +163,15 @@ export default function VShowcase() {
               </div>
             </div>
 
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onClick={() => {
+                window.open("https://react-kaboom.netlify.app/");
+              }}
+            >
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="https://react-kaboom.netlify.app/">
-                    <h2>Mario Game</h2>
-                  </a>
+                  <h2>Mario Game</h2>
 
                   <p>Basic mario game built with react and kaboom.js</p>
 
@@ -169,19 +186,22 @@ export default function VShowcase() {
               </div>
             </div>
 
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onClick={() => {
+                window.open("https://mywordlee.herokuapp.com/");
+              }}
+            >
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="https://mywordlee.herokuapp.com/">
-                    <h2>Wordle Game</h2>
-                  </a>
+                  <h2>Wordle Game</h2>
 
-                  <p>Wordle game copy built with vanilia-js and express</p>
+                  <p>Wordle game copy built with vanilla-js and express</p>
 
                   <Image
                     src={wordle_game}
                     className={styles.image}
-                    alt="Wordle game copy built with vanilia-js and express"
+                    alt="Wordle game copy built with vanilla-js and express"
                     height="250px"
                     width="500px"
                   ></Image>
@@ -189,14 +209,17 @@ export default function VShowcase() {
               </div>
             </div>
 
-            {/*  HERE */}
-
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onClick={() => {
+                window.open(
+                  "https://github.com/tawfiqkhalilieh/Simple-Discord-Bot"
+                );
+              }}
+            >
               <div className={styles.cardcontent}>
                 <Fade>
-                  <a href="https://github.com/tawfiqkhalilieh/Simple-Discord-Bot">
-                    <h2>Simple Discord Bot</h2>
-                  </a>
+                  <h2>Simple Discord Bot</h2>
 
                   <p>
                     A Bot I was Created Since I Was Working With Discord Bots (

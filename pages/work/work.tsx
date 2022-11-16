@@ -3,13 +3,11 @@ import Head from "next/head";
 import { Fade } from "react-awesome-reveal";
 import { VFooter, VMenuBar, VTimelineGrid } from "../../utils";
 import styles from "./work.module.scss";
-
 export default function VWork() {
   return (
     <div className={styles.workContainer}>
       <Head>
         <title>Work history</title>
-        <link rel="icon" href="me.jpg" type="image/jpg" />
       </Head>
       <VMenuBar activeTab="Work" />
       <div className={styles.content}>
