@@ -13,6 +13,10 @@ export default function VHome() {
     <div className={styles.homeContainer}>
       <Head>
         <title>Tawfiq Khalilieh</title>
+        <meta
+          name="google-site-verification"
+          content="fy6zfD6E-AoN4w1yBFveWzoCyEMDZOhrW8zOR3ufX6E"
+        />
       </Head>
       <VMenuBar activeTab="Home" />
       <div className={styles.content}>
