@@ -1,6 +1,6 @@
-.workContainer {
+.Container {
   display: flex;
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
   flex-direction: column;
   max-width: 100vw;
 
@@ -23,6 +23,16 @@
     .timelineGridCotainer {
       max-width: 100vw;
     }
+  }
+
+  .animated404 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 

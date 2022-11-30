@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./menubar.module.scss";
 type MenuBarProps = {
-  activeTab: "Home" | "Work" | "Showcase";
+  activeTab: "Home" | "Work" | "Showcase" | undefined;
 };
 
 export function VMenuBar(props: MenuBarProps) {
@@ -14,7 +14,7 @@ export function VMenuBar(props: MenuBarProps) {
             <h3 className={styles.name}>Tawfiq Khalilieh</h3>
           </a>
         </Link>
-        
+
         <Link href={`/`}>
           <a className={styles.tab}>
             <h3

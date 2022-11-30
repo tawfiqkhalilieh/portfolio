@@ -1,2 +1,1 @@
-export { VMainHeader } from './mainheader'
-export { VToolsTech } from './toolstech'
+export { VMainHeader } from "./mainheader";
