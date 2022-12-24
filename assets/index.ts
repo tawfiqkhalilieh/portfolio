@@ -52,3 +52,7 @@ export { default as wordle_game } from "./showcase/my_wordle.png";
 export { default as discord_bot } from "./showcase/discord_bot.png";
 export { default as the_other_me } from "./showcase/the_other_me.jpeg";
 export { default as social_media_fastapi } from "./showcase/social_media_fastapi.png";
+export { default as todo_app } from "./showcase/todo_app.gif";
+export { default as number_memory_test } from "./showcase/number_memory.png";
+export { default as speed_typing_test } from "./showcase/speed_typing_test.png";
+export { default as backend_golang } from "./showcase/backend-golang.png";

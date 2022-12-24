@@ -10,7 +10,6 @@ export function VMenuBar(props: MenuBarProps) {
       <nav className={styles.menuBar}>
         <Link href={`/`}>
           <a className={styles.title}>
-            <div className={styles.squareInitials}>Taw</div>
             <h3 className={styles.name}>Tawfiq Khalilieh</h3>
           </a>
         </Link>

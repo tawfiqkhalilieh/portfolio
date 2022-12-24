@@ -17,8 +17,7 @@ export default function VWork() {
             <h2>
               I&apos;ve started my journey with programming back in 2019 on at
               Loop with c# and HTML (basics) In 2020 I managed to get an
-              internship and worked as a trainee Backend developer at altooro.
-              Since then, I have been working as a Backend web developer.
+              internship and worked as a software development intern at altooro.
             </h2>
           </Fade>
         </div>

@@ -40,7 +40,6 @@ export default function VHome() {
             </a>
           </div>
         </div>
-        <></>
         <div className={styles.linkBoxes}>
           <div className={styles.workHistoryBackground} />
           <div className={styles.boxesContaier}>
@@ -53,8 +52,7 @@ export default function VHome() {
                 </h1>
                 <h2 className={styles.linkBoxTextContent}>
                   Here, you can learn more about the companies I&apos;ve
-                  collaborated with, projects I&apos;ve been part of, and the
-                  technologies I use every day.
+                  collaborated with.
                 </h2>
                 <Link href={`/work`}>
                   <a className={styles.linkBoxButton}>

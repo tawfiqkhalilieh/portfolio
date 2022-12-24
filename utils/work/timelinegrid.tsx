@@ -81,31 +81,14 @@ export function VTimelineGrid() {
             Main responsibilities:
             <br />
             - designing the frontend,
-            <br />
-            - creating discord bots,
-            <br />
-            <br />
-            Languages:{" "}
-            <b>
-              <a href="https://discord.js.org/#/">discord.js</a>
-            </b>
-            ,{" "}
-            <b>
-              <a href="https://discordpy.readthedocs.io/en/stable/">
-                discord.py
-              </a>
-            </b>
-            .<br />
-            Styling: <b> HTML + CSS (bootstrap) </b>.<br />
-            Version Control System:{" "}
-            <b>
-              <a href="https://github.com">GitHub</a>.
-            </b>
-            <br />
+            <br />- creating discord bots,
+            <br />- manage the server activities
           </p>
         </div>
       </div>
       <div className={styles.timelineGridItemAdjoiningCard} />
+      <div className={styles.timelineGridItem} />
+      <div className={styles.timelineGridItem} />
       <div className={styles.timelineGridItem} />
       <div className={styles.timelineGridItemWide}>
         <h1>11.2021</h1>
@@ -142,46 +125,7 @@ export function VTimelineGrid() {
             Main responsibilities:
             <br />- Building <b>Backend APIs</b> and web servers.
             <br />- setting up server with <b>database</b>.
-            <br />
-            Languages and FrameWorks:{" "}
-            <b>
-              <a href="https://www.python.org/">Python</a>
-            </b>{" "}
-            ,{" "}
-            <b>
-              <a href="https://www.javascript.com/">JavaScript</a>
-            </b>{" "}
-            ,{" "}
-            <b>
-              <a href="https://fastapi.tiangolo.com/">FastAPI</a>
-            </b>{" "}
-            ,{" "}
-            <b>
-              <a href="https://expressjs.com/">express.js</a>{" "}
-              <b>
-                {" "}
-                , <a href="https://www.cypress.io/">cypress</a>
-              </b>{" "}
-            </b>{" "}
-            and
-            <b>
-              {" "}
-              <a href="https://www.docker.com/">Docker</a>
-            </b>{" "}
-            .<br />
-            Database:{" "}
-            <b>
-              <a href="https://aws.amazon.com/dynamodb/?trk=a7cabc8b-ddad-4be2-9025-9779fd9ebec6&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Database|DynamoDB|IL|EN|Text&s_kwcid=AL!4422!3!494855355025!e!!g!!dynamodb&ef_id=CjwKCAjwu_mSBhAYEiwA5BBmfy6rfAo3DQRWdurIywYoYG690AmYktKU9pEZv1_VqRTKf7QnojwVBRoCDnAQAvD_BwE:G:s&s_kwcid=AL!4422!3!494855355025!e!!g!!dynamodb">
-                Dynamodb
-              </a>{" "}
-              and <a href="https://redis.io/">redis</a>
-            </b>
-            .<br />
-            Version Control System:{" "}
-            <b>
-              <a href="https://github.com">GitHub</a>.
-            </b>
-            <br />
+            <br />- managing data migrating data
           </p>
         </div>
       </div>
