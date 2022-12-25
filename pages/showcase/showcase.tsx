@@ -81,7 +81,7 @@ const cards = [
     alt: "Discord Botsz",
   },
   {
-    url: "looper-mentors-todo-app.vercel.app/",
+    url: "https://looper-mentors-todo-app.vercel.app/",
     header: "TODO app",
     paragraph: "Simple todo app built with Next.js, React, Typescript",
     img: todo_app,
