@@ -1,3 +1,5 @@
+$main: rgb(109, 226, 237);
+
 @media (min-width: 600px) {
   .containercard {
     grid-template-columns: repeat(2, 1fr);
@@ -30,7 +32,7 @@
     padding: 80px 0;
 
     .summary {
-      color: #0f0;
+      color: $main;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -67,7 +69,7 @@
   }
 
   .card a :visited {
-    color: #0f0;
+    color: $main;
     margin: 0;
     font-family: "Inconsolata", monospace;
     font-size: 2.25rem;
@@ -100,7 +102,7 @@
 
   .card h2 {
     text-decoration: none;
-    color: #0f0;
+    color: $main;
     margin: 0;
     font-family: "Inconsolata", monospace;
     font-size: 1.5rem;
@@ -112,7 +114,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: #0f0;
+    color: $main;
     margin: auto;
   }
 
@@ -142,7 +144,7 @@
       text-align: center;
       flex-direction: row;
       text-decoration: none;
-      color: #0f0;
+      color: $main;
       margin: 0;
       font-family: "Inconsolata", monospace;
       font-size: 1.5rem;

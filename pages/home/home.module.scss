@@ -1,3 +1,5 @@
+$main: rgb(109, 226, 237);
+
 .homeContainer {
   display: flex;
   background-color: #1a1a1a;
@@ -129,8 +131,8 @@
 
         &:hover {
           animation: onHover 0.5s;
-          background-color: #0f0;
-          border: 3px solid #0f0;
+          background-color: $main;
+          border: 3px solid $main;
           color: #d5d5d5;
           cursor: pointer;
         }
@@ -142,8 +144,8 @@
             color: #d5d5d5;
           }
           100% {
-            background: color #0f0;
-            border: 3px solid #0f0;
+            background: color $main;
+            border: 3px solid $main;
             color: #d5d5d5;
           }
         }
@@ -163,7 +165,7 @@
 
   .tool_tech_header {
     padding-top: 1rem;
-    color: rgb(164, 180, 180);
+    color: $main;
     font-size: 40px;
     margin: 10px;
   }

@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { Fade } from "react-awesome-reveal";
-import Image from "next/image";
 import { VFooter, VMenuBar } from "../../utils";
 import {
   sortingvisualizer,

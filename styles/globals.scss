@@ -1,3 +1,5 @@
+$main: rgb(109, 226, 237);
+
 html,
 body {
   height: 100vh;
@@ -8,7 +10,7 @@ body {
 }
 
 h1 {
-  color: #21c224;
+  color: $main;
   font-size: 48px;
   margin: 10px;
 }
@@ -19,5 +21,5 @@ h2 {
 }
 
 b {
-  color: #21c224;
+  color: $main;
 }

@@ -1,3 +1,5 @@
+$main: rgb(109, 226, 237);
+
 .Container {
   display: flex;
   background-color: #1a1a1a;
@@ -12,7 +14,7 @@
     padding: 80px 0;
 
     .summary {
-      color: #0f0;
+      color: $main;
       display: flex;
       flex-direction: column;
       justify-content: center;
