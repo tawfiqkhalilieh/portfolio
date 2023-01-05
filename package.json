@@ -11,8 +11,11 @@
   "dependencies": {
     "@types/nodemailer": "^6.4.7",
     "@types/three": "^0.146.0",
+    "dotenv": "^16.0.3",
     "extracted-loader": "^1.0.7",
     "file-loader": "^6.2.0",
+    "firebase": "^9.15.0",
+    "firebase-admin": "^11.4.1",
     "fs": "^0.0.1-security",
     "ignore-loader": "^0.1.2",
     "img-loader": "^4.0.0",

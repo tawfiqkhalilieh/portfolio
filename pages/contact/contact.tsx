@@ -114,6 +114,7 @@ const Contact = () => {
         className={styles.contactContainer}
         onKeyPress={(event) => {
           if (event.key === "Enter") {
+            console.log(process.env.apiKey);
             emailHandler(name, email, message);
           }
         }}
