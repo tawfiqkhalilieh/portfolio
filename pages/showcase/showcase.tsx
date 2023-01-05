@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { Fade } from "react-awesome-reveal";
-import Image from "next/image";
 import { VFooter, VMenuBar } from "../../utils";
 import {
   sortingvisualizer,
@@ -81,7 +80,7 @@ const cards = [
     alt: "Discord Botsz",
   },
   {
-    url: "looper-mentors-todo-app.vercel.app/",
+    url: "https://looper-mentors-todo-app.vercel.app/",
     header: "TODO app",
     paragraph: "Simple todo app built with Next.js, React, Typescript",
     img: todo_app,

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useTypedText, VMenuBar, VFooter } from "../../utils";
 import styles from "./404.module.scss";
-export function VMainHeader() {
+const VMainHeader = () => {
   return (
     <div className={styles.aboutInfo}>
       <h2 className={styles.animated404}>
@@ -11,7 +11,7 @@ export function VMainHeader() {
       </h2>
     </div>
   );
-}
+};
 
 export default function Custom404() {
   return (

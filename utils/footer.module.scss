@@ -1,3 +1,5 @@
+$main: rgb(109, 226, 237);
+
 .footer {
   align-items: center;
   background-color: #1a1a1a;
@@ -13,8 +15,8 @@
   }
 
   .copyrights {
-    border-bottom: 3px solid #51df19;
-    color: #D5D5D5;
+    border-bottom: 3px solid $main;
+    color: $main;
     padding: 20px;
     text-align: center;
     width: 200px;
@@ -27,5 +29,3 @@
     max-height: 100px;
   }
 }
-
-
