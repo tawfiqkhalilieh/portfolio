@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 import { VFooter, VMainHeader, VMenuBar } from "../../utils";
 import VToolsTech from "../../utils/home/toolstech";
 import { chevronDown } from "../../assets";
-import { profilePicture } from "../../assets";
+import { tawfiq } from "../../assets";
 import styles from "./home.module.scss";
 import Head from "next/head";
 import techs from "../../utils/techs";
@@ -26,7 +26,7 @@ export default function VHome() {
           <div className={styles.introduction}>
             <VMainHeader />
             <div className={styles.profilePicture}>
-              <Image alt="Profile picture of Tawfiq Kh." src={profilePicture} />
+              <Image alt="Profile picture of Tawfiq Kh." src={tawfiq} />
             </div>
           </div>
           <div className={styles.swipeDownIcon}>

@@ -56,3 +56,4 @@ export { default as todo_app } from "./showcase/todo_app.gif";
 export { default as number_memory_test } from "./showcase/number_memory.png";
 export { default as speed_typing_test } from "./showcase/speed_typing_test.png";
 export { default as backend_golang } from "./showcase/backend-golang.png";
+export { default as tawfiq } from "./tawfiq.jpg";
