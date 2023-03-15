@@ -15,9 +15,11 @@ export default function VWork() {
           <Fade>
             <h1>My work history</h1>
             <h2>
-              I&apos;ve started my journey with programming back in 2019 on at
-              Loop with c# and HTML (basics) In 2020 I managed to get an
-              internship and worked as a software development intern at altooro.
+              My programming journey commenced in 2019, during which I acquired
+              foundational knowledge in C# and HTML at Loop. Two years later,
+              after working with advanced technologies and honing my skills, I
+              secured an enviable internship at Altooro, where I continued to
+              develop my expertise as a software development intern.
             </h2>
           </Fade>
         </div>
