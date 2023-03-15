@@ -15,6 +15,8 @@ import {
   number_memory_test,
   speed_typing_test,
   backend_golang,
+  robotplayingchess,
+  chesswithbot,
 } from "../../assets";
 import styles from "./showcase.module.scss";
 import Card from "./card";
@@ -27,6 +29,22 @@ const cards = [
       "Simple ML model I am currently working on that answers my whatsapp messages",
     img: the_other_me,
     alt: "ML model that answers my whatsapp messages",
+  },
+  {
+    url: "https://github.com/tawfiqkhalilieh/chessCheater",
+    header: "chessCheater",
+    paragraph:
+      "A made-for-fun project that I built to improve my automation skills when I saw myself wasting a lot of time playing chess.",
+    img: robotplayingchess,
+    alt: "chess.com cheat",
+  },
+  {
+    url: "https://github.com/tawfiqkhalilieh/chessHelper",
+    header: "chessCheater",
+    paragraph:
+      "Excel in chess openings with chessHelper. Quickly access the top three moves for each opening variation in the game on chess.com.",
+    img: chesswithbot,
+    alt: "chess bot that helps you while playing chess on chess.com",
   },
   {
     url: "https://pypi.org/project/long-list/",
@@ -115,10 +133,14 @@ const showCards = () => {
   cards.forEach((card) => {
     cardsArr.push(
       <Card
+        // @ts-ignore
         url={card.url}
+        // @ts-ignore
         header={card.header}
+        // @ts-ignore
         paragraph={card.paragraph}
         img={card.img}
+        // @ts-ignore
         alt={card.alt}
       />
     );
@@ -138,19 +160,15 @@ export default function VShowcase() {
           <Fade>
             <h1>Showcase</h1>
             <h2>
-              In this page I will show you a couple of proejcts I have been
-              working on.
+              On this page, I will show you a couple of projects I have been
+              working on in the last two years.
             </h2>
           </Fade>
         </div>
       </div>
       <div className={styles.container}>
         <section className={styles.example}>
-          <div className={styles.containercard}>
-            {showCards()}
-
-            {/* TODO: create an object that contains all the cards data and loop on it to create every card */}
-          </div>
+          <div className={styles.containercard}>{showCards()}</div>
         </section>
       </div>
       <VFooter />
