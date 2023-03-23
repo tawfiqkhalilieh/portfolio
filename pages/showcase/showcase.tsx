@@ -40,7 +40,7 @@ const cards = [
   },
   {
     url: "https://github.com/tawfiqkhalilieh/chessHelper",
-    header: "chessCheater",
+    header: "chessHelper",
     paragraph:
       "Excel in chess openings with chessHelper. Quickly access the top three moves for each opening variation in the game on chess.com.",
     img: chesswithbot,
