@@ -62,12 +62,12 @@ export function VTimelineGrid() {
             <Image
               alt="discord freelancer"
               src={discordLogo}
-              height={2}
-              width={45}
+              height={75}
+              width={75}
             />
             <div className={styles.companyInfo}>
               <h1 className={styles.companyTitle}>
-                <a href={"/"}> freelancing</a>
+                <a> freelancing</a>
               </h1>
               <h2 className={styles.cardContentDetails}> </h2>
               <h2 className={styles.cardContentDetails}>08.2020 - 10.2020</h2>
@@ -86,8 +86,6 @@ export function VTimelineGrid() {
           </p>
         </div>
       </div>
-      <div className={styles.timelineGridItemAdjoiningCard} />
-      <div className={styles.timelineGridItem} />
       <div className={styles.timelineGridItem} />
       <div className={styles.timelineGridItem} />
       <div className={styles.timelineGridItemWide}>
@@ -137,6 +135,8 @@ export function VTimelineGrid() {
       <div className={styles.timelineGridItemWide}>
         <div className={styles.timelinePoint} />
         <h1>{getDate()}</h1>
+        <br />
+        <br />
       </div>
     </div>
   );
