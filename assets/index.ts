@@ -57,5 +57,5 @@ export { default as number_memory_test } from "./showcase/number_memory.png";
 export { default as speed_typing_test } from "./showcase/speed_typing_test.png";
 export { default as backend_golang } from "./showcase/backend-golang.png";
 export { default as tawfiq } from "./tawfiq.jpg";
-export { default as robotplayingchess } from "./showcase/robotplayingchess.avif";
+export { default as chessCheaterPlus } from "./showcase/chessCheaterPlus.png";
 export { default as chesswithbot } from "./showcase/cheewithbot.jpg";

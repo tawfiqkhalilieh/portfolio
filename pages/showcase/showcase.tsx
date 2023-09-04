@@ -15,7 +15,7 @@ import {
   number_memory_test,
   speed_typing_test,
   backend_golang,
-  robotplayingchess,
+  chessCheaterPlus,
   chesswithbot,
 } from "../../assets";
 import styles from "./showcase.module.scss";
@@ -35,7 +35,7 @@ const cards = [
     header: "chessCheater",
     paragraph:
       "A made-for-fun project that I built to improve my automation skills when I saw myself wasting a lot of time playing chess.",
-    img: robotplayingchess,
+    img: chessCheaterPlus,
     alt: "chess.com cheat",
   },
   {

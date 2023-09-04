@@ -17,17 +17,11 @@ const emailHandler = (
     // @ts-ignore
     message_value = message.current.value;
 
-  console.table({
-    name: name_value,
-    email: email_value,
-    message: message_value,
-  });
   // validate content
-  function isEmailValid(email: string): boolean {
-    const emailRegex =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    return emailRegex.test(email);
-  }
+  const isEmailValid = (email: string): boolean =>
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
+      email
+    );
 
   const showToast = (mgs: string, success: boolean) => {
     return success
