@@ -1,10 +1,19 @@
 import "./styles.css";
-import ReactFlow, { ReactFlowProvider, useReactFlow, Controls, Handle } from "reactflow";
+import React from "react";
+import ReactFlow, { Controls, Handle } from "reactflow";
 import "reactflow/dist/style.css";
-import React, { useState, useEffect, useRef } from 'react';
-import { Search, X } from 'lucide-react';
-import { useViewport } from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
+// import { Check } from "@untitledui/icons";
+// import { Button } from "@/components/base/buttons/button";
+
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+} from "@heroui/react";
 
 
 const nodeDefaults = {
@@ -1149,198 +1158,25 @@ const edges = [
   { id: "e10-56", source: "10", target: "56", targetHandle: "right", style: { strokeWidth: 3, stroke: "rgb(126 34 206)" } },
 ];
 
+const handleNavLinkClick = (e: any, targetId: string) => {
+  e.preventDefault();
+  const targetElement = document.querySelector(targetId);
+  if (targetElement) {
+    // @ts-ignore
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    // TODO: adjust offset for fixed header
+    const offsetPosition = elementPosition + window.pageYOffset - 80;
 
-const FuzzyFinderModal = ({ isOpen, onClose, onNavigate, searchableData }: { isOpen: Function, onClose: Function, onNavigate: Function, searchableData: never[] }) => {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const inputRef = useRef(null);
-  const modalRef = useRef(null);
-
-  useEffect(() => {
-    if (isOpen) {
-      inputRef.current?.focus();
-      setQuery(''); // Reset query on open
-      setResults(searchableData); // Set initial results to all data
-    }
-  }, [isOpen, searchableData]);
-
-  useEffect(() => {
-    if (query.trim() === '') {
-      setResults(searchableData);
-      return;
-    }
-
-    const calculateScore = (item: any, query: any) => {
-      const lowerQuery = query.toLowerCase();
-      const lowerName = item.name.toLowerCase();
-      const lowerDesc = item.description.toLowerCase();
-      let score = 0;
-
-      const nameIndex = lowerName.indexOf(lowerQuery);
-      if (nameIndex !== -1) {
-        score += 100; // High base score for name match
-        if (nameIndex === 0) {
-          score += 50; // Bonus for starting match
-        }
-        // Bonus for being a closer match in length
-        score -= Math.abs(lowerName.length - lowerQuery.length);
-      }
-
-      if (lowerDesc.includes(lowerQuery)) {
-        score += 10; // Lower score for description match
-      }
-
-      return score;
-    };
-
-    const scoredResults = searchableData
-      .map(item => ({
-        ...item,
-        score: calculateScore(item, query),
-      }))
-      .filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score);
-
-    setResults(scoredResults);
-  }, [query, searchableData]);
-
-  const handleItemClick = (e: any, item: any) => {
-    onNavigate(e, item.href);
-    setQuery('');
-    onClose();
-  };
-
-  // Handle click outside
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose();
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [modalRef, onClose]);
-
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex justify-center items-start pt-20 transition-opacity duration-300">
-      <div ref={modalRef} className="bg-white rounded-lg shadow-xl w-full max-w-xl transform transition-all duration-300">
-        <div className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search for skills"
-            className="w-full bg-transparent p-4 pl-12 text-gray-800 focus:outline-none border-b border-gray-200"
-          />
-          <button onClick={() => onClose} className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-700">
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-        <div className="max-h-96 overflow-y-auto p-2">
-          {results.length === 0 && (
-            <div className="p-4 text-center text-gray-500">No results found.</div>
-          )}
-          {results.map((item, index) => (
-            <a
-              key={index}
-              href={item.href}
-              onClick={(e) => handleItemClick(e, item)}
-              className="block p-3 rounded-lg hover:bg-purple-50 cursor-pointer"
-            >
-              <div className="font-semibold text-gray-800">{item.name}</div>
-
-              <div className="text-sm text-gray-500">{item.description}</div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 };
 
-
 function skillsSketch() {
-  const headerRef = useRef(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const searchableData = [
-    { name: 'JS', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'JavaScript', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'Python', description: 'Learn more about my background and passion.', href: '#' },
-
-
-    { name: 'Java', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'C#', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'HTML', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'CSS', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'http', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'Git', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'Github', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'gRPC', description: 'Learn more about my background and passion.', href: '#' },
-  ];
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-        event.preventDefault();
-        setIsModalOpen(true);
-      }
-      if (event.key === 'Escape') {
-        setIsModalOpen(false);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-  const handleNavLinkClick = (e, targetId) => {
-    e.preventDefault();
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      const headerOffset = headerRef.current ? headerRef.current.offsetHeight : 0;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
-
-  //   const { setViewport, getNode } = useReactFlow();
-
-  //   useEffect(() => {
-  //     const nodeId = "2"; // 👈 your target node
-  //     const node = getNode(nodeId);
-
-  //     if (node) {
-  //       const x = node.position.x + node.width! / 2;
-  //       const y = node.position.y + node.height! / 2;
-  //       setViewport({ x: x - window.innerWidth / 2, y: y - window.innerHeight / 2, zoom: 1.5 });
-  //     }
-  //   }, [setViewport, getNode]);
   return (
     <>
-      <FuzzyFinderModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onNavigate={handleNavLinkClick}
-        searchableData={searchableData}
-      />
       <div id="skills" className="my-8" style={{ width: "100vw", }}>
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900">Skills and Techlandscape </h2>
@@ -1350,7 +1186,7 @@ function skillsSketch() {
           <div className="mt-8 flex justify-center gap-4">
             <a href="#skill-sketch" onClick={(e) => handleNavLinkClick(e, '#skill-sketch')} className="bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-800 transition-colors shadow-sm">Navigate!</a>
             {/* Show modal for fuzzy finding */}
-            <a onClick={() => setIsModalOpen(true)} className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors shadow-sm">Fuzzy Find</a>
+            <a href="#" onClick={(e) => handleNavLinkClick(e, '#projects')} className="bg-white text-gray-800 font-semibold px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors shadow-sm">Fuzzy Find</a>
           </div>
         </div>
 
@@ -1358,11 +1194,7 @@ function skillsSketch() {
       <div id="skill-sketch" style={{ width: "100vw", height: "75vh", }}>
 
         <div className="my-16" style={{ width: "100vw", height: "75vh", }}>
-          {/* onClick={() => focusNode("2")} */}
-          {/*   */}
-          <ReactFlow defaultViewport={{ x: 1000, y: 0, zoom: 0.8 }} proOptions={{ hideAttribution: true }} nodes={nodes} edges={edges}>
-
-            {/* <Flow /> */}
+          <ReactFlow defaultViewport={{ x: 800, y: 0, zoom: .5 }} proOptions={{ hideAttribution: true }} nodes={nodes} edges={edges}>
             <Controls
               showInteractive={false}
               style={{
@@ -1371,7 +1203,6 @@ function skillsSketch() {
           </ReactFlow>
         </div>
       </div>
-
     </>
   )
 }
