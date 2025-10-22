@@ -1,8 +1,7 @@
 "use client";
-
+import { Button } from "@/components/buttons/button";
 import { ArrowLeft } from "@untitledui/icons";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/base/buttons/button";
 
 export default function NotFound() {
     const router = useRouter();

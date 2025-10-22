@@ -1,10 +1,13 @@
 import "./styles.css";
-import ReactFlow, { ReactFlowProvider, useReactFlow, Controls, Handle } from "reactflow";
+import ReactFlow, { Controls, Handle, } from "reactflow";
 import "reactflow/dist/style.css";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, KeyboardEvent, MouseEvent } from 'react';
 import { Search, X } from 'lucide-react';
-import { useViewport } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
+import { 
+  SearchableItem 
+} from '@/interfaces/SearchableData';
+
 
 
 const nodeDefaults = {
@@ -1150,11 +1153,11 @@ const edges = [
 ];
 
 
-const FuzzyFinderModal = ({ isOpen, onClose, onNavigate, searchableData }: { isOpen: Function, onClose: Function, onNavigate: Function, searchableData: never[] }) => {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const inputRef = useRef(null);
-  const modalRef = useRef(null);
+const FuzzyFinderModal = ({ isOpen, onClose, onNavigate, searchableData }: { isOpen: boolean, onClose: Function, onNavigate: Function, searchableData: SearchableItem[] }) => {
+  const [query, setQuery] = useState<string>('');
+  const [results, setResults] = useState<SearchableItem[]>([]);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const modalRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -1212,12 +1215,19 @@ const FuzzyFinderModal = ({ isOpen, onClose, onNavigate, searchableData }: { isO
 
   // Handle click outside
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current &&
+        !modalRef.current.contains(
+          // @ts-ignore
+          event.target
+        )) {
         onClose();
       }
     }
+    // @ts-ignore
     document.addEventListener("mousedown", handleClickOutside);
+
+    // @ts-ignore
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [modalRef, onClose]);
 
@@ -1267,33 +1277,67 @@ function skillsSketch() {
   const headerRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const searchableData = [
-    { name: 'JS', description: 'Learn more about my background and passion.', href: '#' },
+  const searchableData: SearchableItem[] = [
+    // System Architecture
+    { name: 'System Architecture', description: 'Overview of system designs and paradigms.', href: '#' },
+    { name: 'Event Driven', description: 'Building reactive systems that respond to events.', href: '#' },
+    { name: 'Monolithic', description: 'Traditional single-tiered application design.', href: '#' },
+    { name: 'Microservices', description: 'Breaking apps into independent, scalable services.', href: '#' },
 
-    { name: 'JavaScript', description: 'Learn more about my background and passion.', href: '#' },
+    // Dataflow
+    { name: 'Dataflow', description: 'How data moves and transforms through systems.', href: '#' },
+    { name: 'ML Pipelines', description: 'Building structured pipelines for machine learning workflows.', href: '#' },
+    { name: 'Data Migrations', description: 'Moving and transforming data across systems.', href: '#' },
 
-    { name: 'Python', description: 'Learn more about my background and passion.', href: '#' },
+    // Backend
+    { name: 'Backend', description: 'Server-side development and APIs.', href: '#' },
+    { name: 'FastAPI', description: 'Python framework for fast API development.', href: '#' },
+    { name: 'Flask', description: 'Lightweight Python web framework.', href: '#' },
+    { name: 'Express.js', description: 'Node.js framework for building backend services.', href: '#' },
+    { name: 'Fastify.js', description: 'High-performance Node.js web framework.', href: '#' },
+    { name: 'Node.js', description: 'JavaScript runtime for backend development.', href: '#' },
+    { name: 'Goroutines', description: 'Concurrent programming in Go.', href: '#' },
+    { name: 'Gin', description: 'Go web framework for building REST APIs.', href: '#' },
 
+    // Frontend
+    { name: 'Frontend', description: 'Client-side web development.', href: '#' },
+    { name: 'React', description: 'Building interactive UI components.', href: '#' },
+    { name: 'HTMX', description: 'Enabling dynamic HTML without heavy JS.', href: '#' },
+    { name: 'Tailwind', description: 'Utility-first CSS framework for styling.', href: '#' },
+    { name: 'Next.js', description: 'React framework for server-side rendering.', href: '#' },
+    { name: 'Electron.js', description: 'Building cross-platform desktop apps with JS.', href: '#' },
 
-    { name: 'Java', description: 'Learn more about my background and passion.', href: '#' },
+    // Databases
+    { name: 'Databases', description: 'Storing and retrieving data efficiently.', href: '#' },
+    { name: 'PostgreSQL', description: 'Advanced relational database.', href: '#' },
+    { name: 'MySQL', description: 'Popular relational database system.', href: '#' },
+    { name: 'MongoDB', description: 'Flexible NoSQL database.', href: '#' },
+    { name: 'Redis', description: 'In-memory data structure store.', href: '#' },
+    { name: 'Firebase', description: 'Realtime database and backend services.', href: '#' },
+    { name: 'DynamoDB', description: 'Serverless NoSQL database from AWS.', href: '#' },
 
-    { name: 'C#', description: 'Learn more about my background and passion.', href: '#' },
+    // DevOps & Tools
+    { name: 'DevOps & Tools', description: 'Infrastructure, automation, and CI/CD.', href: '#' },
+    { name: 'Docker', description: 'Containerizing applications for consistent environments.', href: '#' },
+    { name: 'Docker Compose', description: 'Managing multi-container Docker apps.', href: '#' },
+    { name: 'GitHub Actions', description: 'Automating workflows and deployments.', href: '#' },
 
-    { name: 'HTML', description: 'Learn more about my background and passion.', href: '#' },
+    // AI/ML
+    { name: 'AI/ML', description: 'Machine learning and AI development.', href: '#' },
+    { name: 'scikit-learn', description: 'Python library for classical ML algorithms.', href: '#' },
+    { name: 'TensorFlow', description: 'Framework for building neural networks.', href: '#' },
+    { name: 'Gemini API', description: 'AI API for various advanced ML tasks.', href: '#' },
+    { name: 'OpenAI API', description: 'Interfacing with OpenAI LLMs for projects.', href: '#' },
+    { name: 'Pandas', description: 'Python library for data manipulation and analysis.', href: '#' },
+    { name: 'NumPy', description: 'Python library for numerical computing.', href: '#' },
 
-    { name: 'CSS', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'http', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'Git', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'Github', description: 'Learn more about my background and passion.', href: '#' },
-
-    { name: 'gRPC', description: 'Learn more about my background and passion.', href: '#' },
+    // Automation
+    { name: 'Automation', description: 'Automating tasks and browser interactions.', href: '#' },
+    { name: 'Selenium', description: 'Browser automation for testing and tasks.', href: '#' },
   ];
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
         event.preventDefault();
         setIsModalOpen(true);
@@ -1302,15 +1346,22 @@ function skillsSketch() {
         setIsModalOpen(false);
       }
     };
+
+    // @ts-ignore
     window.addEventListener('keydown', handleKeyDown);
+
+    // @ts-ignore
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const handleNavLinkClick = (e, targetId) => {
+  const handleNavLinkClick = (e: MouseEvent, targetId: string) => {
     e.preventDefault();
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      const headerOffset = headerRef.current ? headerRef.current.offsetHeight : 0;
+      const headerOffset = headerRef.current ?
+        // @ts-ignore
+        headerRef.current.offsetHeight :
+        0;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -1354,13 +1405,14 @@ function skillsSketch() {
           </div>
         </div>
 
+
       </div>
       <div id="skill-sketch" style={{ width: "100vw", height: "75vh", }}>
 
         <div className="my-16" style={{ width: "100vw", height: "75vh", }}>
           {/* onClick={() => focusNode("2")} */}
           {/*   */}
-          <ReactFlow defaultViewport={{ x: 1000, y: 0, zoom: 0.8 }} proOptions={{ hideAttribution: true }} nodes={nodes} edges={edges}>
+          <ReactFlow defaultViewport={{ x: 350, y: 0, zoom: 0.44 }} proOptions={{ hideAttribution: true }} nodes={nodes} edges={edges}>
 
             {/* <Flow /> */}
             <Controls

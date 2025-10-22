@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { RouteProvider } from "@/providers/router-provider";
-import { Theme } from "@/providers/theme";
+import { RouteProvider } from "@/components/providers/router-provider";
+import { Theme } from "@/components/providers/themes";
 import "@/styles/globals.css";
 import { cx } from "@/utils/cx";
 
