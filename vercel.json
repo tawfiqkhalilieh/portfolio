@@ -4,8 +4,11 @@
   "outputDirectory": ".next",
   "framework": "nextjs",
   "functions": {
-    "api/**/*.[jt]s": {
-      "runtime": "@vercel/node@2"
+    "app/api/**/*.[jt]s": {
+      "runtime": "edge"
+    },
+    "pages/api/**/*.[jt]s": {
+      "runtime": "@vercel/node@3.0.0"
     }
   }
 }
