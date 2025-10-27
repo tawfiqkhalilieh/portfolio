@@ -1,0 +1,8 @@
+{
+  "buildCommand": "bun run build",
+  "installCommand": "bun install",
+  "outputDirectory": ".next",
+  "functions": {
+    "runtime": "nodejs18.x"
+  }
+}
