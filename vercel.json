@@ -4,8 +4,8 @@
   "outputDirectory": ".next",
   "framework": "nextjs",
   "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs18.x"
+    "api/**/*.[jt]s": {
+      "runtime": "@vercel/node@2"
     }
   }
 }
