@@ -2,7 +2,10 @@
   "buildCommand": "bun run build",
   "installCommand": "bun install",
   "outputDirectory": ".next",
+  "framework": "nextjs",
   "functions": {
-    "runtime": "nodejs18.x"
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
   }
 }
