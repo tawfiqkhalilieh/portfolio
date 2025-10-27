@@ -13,7 +13,7 @@ import Projects from '@/components/sections/projects';
 const HomeScreen = () => {
 
   const headerRef = useRef(null);
-
+  
   const handleNavLinkClick = (e: any, targetId: string) => {
     e.preventDefault();
     const targetElement = document.querySelector(targetId);

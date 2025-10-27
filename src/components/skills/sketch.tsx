@@ -4,9 +4,9 @@ import "reactflow/dist/style.css";
 import React, { useState, useEffect, useRef, KeyboardEvent, MouseEvent } from 'react';
 import { Search, X } from 'lucide-react';
 import '@xyflow/react/dist/style.css';
-import { 
-  SearchableItem 
-} from '@/interfaces/SearchableData';
+import
+SearchableItem
+  from '@/interfaces/SearchableData';
 
 
 

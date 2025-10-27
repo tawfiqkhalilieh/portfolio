@@ -61,19 +61,18 @@ const Projects = () => (
 
         />
         <ProjectCard
-          imgSrc="https://media.discordapp.net/attachments/926499772146286613/1426607745880162429/PXL_20251011_162109310.jpg?ex=68f317bf&is=68f1c63f&hm=39fbf1c653b9fbc1f8da0f1d8ce819cd9b7f53000c75939cced7eb7cb02f8786&=&format=webp&width=1038&height=779"
+          imgSrc="https://media.discordapp.net/attachments/926499772146286613/1426607745880162429/PXL_20251011_162109310.jpg?ex=690046bf&is=68fef53f&hm=0aa7a261308fcf3d4f0129a2f77659ff8b59e9727f5d689983f6bea364dcd175&=&format=webp&width=1109&height=831"
           title="Ubarchy"
           description={["I'm a university student, despite tiling window managers being great, I'd also love to have my own regular windows-like ubuntu system.", "DHH while on the standup said that it cannot be built upon ubuntu, and I'm here to prove him wrong!", "You can check my website for the iso image, the following tutorial is gonnabe to upgrade your current uperating system", "I use it on my desktop and laptop btw, and yes I still use arch btw"
           ]}
           tags={['Linux', 'Hyprland', 'Arch', "Ubuntu", "Omarchy"]}
-          live="https://github.com/tawfiqkhalilieh/ProjectStructurePreview/releases/tag/0.0"
-          source="https://github.com/tawfiqkhalilieh/ProjectStructurePreview"
-
+          live="https://tawfiqkhalilieh.github.io/ubrachy/"
+          source="https://github.com/tawfiqkhalilieh/ubrachy"
         />
 
 
         <ProjectCard
-          imgSrc="https://media.discordapp.net/attachments/1115324664726691870/1428761773779193926/content.png?ex=68f3ad97&is=68f25c17&hm=56ecbfe7da54fa4234ca9d67cd1e5f39a7fe5ab8d3ca905adf267fbea69c84dc&=&format=webp&quality=lossless&width=1067&height=711"
+          imgSrc="https://sdmntprwestus.oaiusercontent.com/files/00000000-8e0c-6230-8d48-44a8ae2e666a/raw?se=2025-10-27T07%3A24%3A10Z&sp=r&sv=2024-08-04&sr=b&scid=bcd28393-e994-440a-bf4b-cbd7da90a29e&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-27T06%3A10%3A26Z&ske=2025-10-28T06%3A10%3A26Z&sks=b&skv=2024-08-04&sig=I0jBYl5PtIJk/Imbivvd4afzRbw9q68ZfYoZAKU3yC0%3D"
           title="chessCheaterPlus"
           description={['An automation that simulates entire player activity in chess.com, starting from playing basic games to solving puzzles or playingg 960 chess games.', 'Powered by automations and chess engines', 'I Built when I was 16 years old', 'The plus/advanced version was shutdown by a request from a chess.com community manager after sharing the code with them', 'I still do have some accounts that weren\'t closed on the project shutdown date'
           ]}

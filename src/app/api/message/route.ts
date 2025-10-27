@@ -6,8 +6,6 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-
-  console.log(request)
   // Parse the request body
   const body = await request.json();
   const { name, email, message }: { name: string, email: string, message: string } = body;
