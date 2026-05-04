@@ -1,7 +1,7 @@
 import "./styles.css";
 import ReactFlow, { Controls, Handle, ReactFlowProvider, useReactFlow } from "reactflow";
 import "reactflow/dist/style.css";
-import React, { useState, useEffect, useRef, KeyboardEvent, MouseEvent } from 'react';
+import React, { useState, useEffect, useRef, MouseEvent as ReactMouseEvent } from 'react';
 import { Search, X } from 'lucide-react';
 import '@xyflow/react/dist/style.css';
 import SearchableItem from '@/interfaces/SearchableData';
@@ -723,11 +723,11 @@ function SkillsSketchContent() {
       }
       if (event.key === 'Escape') setIsModalOpen(false);
     };
-    window.addEventListener('keydown', handleKeyDown as any);
-    return () => window.removeEventListener('keydown', handleKeyDown as any);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const handleNavLinkClick = (e: MouseEvent, targetId: string) => {
+  const handleNavLinkClick = (e: ReactMouseEvent, targetId: string) => {
     e.preventDefault();
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
