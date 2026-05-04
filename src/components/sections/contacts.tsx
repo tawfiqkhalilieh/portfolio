@@ -9,7 +9,7 @@ const handeContactFormSubmit = async (e: React.FormEvent) => {
   };
 
   try {
-    const response = await fetch('http://localhost:3000/api/message', {
+    const response = await fetch('http://taw.vercel.app/api/message', {
       method: 'POST',
       headers: {
 
