@@ -10,7 +10,14 @@ export async function POST(request: Request) {
   const body = await request.json();
   const { name, email, message }: { name: string, email: string, message: string } = body;
 
-  const webhookurl: string = 'https://discord.com/api/webhooks/1430626072470487121/UIZXTS0nezcLKDoTYG0t8EMzFF1Mf3yCctQVHOMucL87ZdaeVrD2cuLF3FipE9qsCJFH';
+  const webhookurl = process.env.DISCORD_WEBHOOK_URL;
+
+  if (!webhookurl) {
+    return new Response(JSON.stringify({ error: "Webhook URL not configured" }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 
   await fetch(webhookurl, {
     method: "POST",

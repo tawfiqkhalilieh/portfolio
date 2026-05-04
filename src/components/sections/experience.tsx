@@ -12,11 +12,36 @@ const Experience = () => (
             <div className="absolute -left-[3.0rem] top-1.5 h-5 w-5 rounded-full bg-purple-700 border-4 border-[#F9FAFB]"></div>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
               <div>
+                <h3 className="text-xl font-semibold text-gray-900">Impact Tech Lead</h3>
+                <p className="text-gray-600">AI Collective Jerusalem</p>
+              </div>
+              <div className="mt-1 sm:mt-0 sm:text-right">
+                <p className="font-medium text-purple-700">2026 - Present</p>
+                <p className="text-sm text-gray-500">Jerusalem, IL</p>
+              </div>
+            </div>
+            <p className="mt-2 text-gray-600">
+              - Led technical direction for AI-focused initiatives and builder programs
+            </p>
+            <p className="mt-2 text-gray-600">
+              - Designed and delivered hands-on sessions on building AI systems and agent-based applications
+            </p>
+            <p className="mt-2 text-gray-600">
+              - Created technical documentation and frameworks to support developers in building production-ready systems
+            </p>
+            <p className="mt-2 text-gray-600">
+              - Mentored engineers and guided project development across multiple teams
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -left-[3.0rem] top-1.5 h-5 w-5 rounded-full bg-purple-700 border-4 border-[#F9FAFB]"></div>
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+              <div>
                 <h3 className="text-xl font-semibold text-gray-900">Founder | Tech Lead</h3>
                 <p className="text-gray-600">COBE iHelp</p>
               </div>
               <div className="mt-1 sm:mt-0 sm:text-right">
-                <p className="font-medium text-purple-700">2025 - Present</p>
+                <p className="font-medium text-purple-700">2025 - 2026</p>
                 <p className="text-sm text-gray-500">Remote</p>
               </div>
             </div>

@@ -72,23 +72,21 @@ const Projects = () => (
 
 
         <ProjectCard
-          imgSrc="./img.png"
-          title="chessCheaterPlus"
-          description={['An automation that simulates entire player activity in chess.com, starting from playing basic games to solving puzzles or playingg 960 chess games.', 'Powered by automations and chess engines', 'I Built when I was 16 years old', 'The plus/advanced version was shutdown by a request from a chess.com community manager after sharing the code with them', 'I still do have some accounts that weren\'t closed on the project shutdown date'
-          ]}
-          tags={['Selenium', 'Python', 'Google Teachable Machine', 'Stockfish', 'LC0', 'Chess', 'tkinter']}
+          imgSrc="/images/stockfish-native-gemini.jpeg"
+          title="Stockfish Native"
+          description={["High-performance C++ implementation bridging native code with Python for extremely fast chess analysis.", "Optimized for low-latency engine interactions and heavy computation tasks by leveraging native performance."]}
+          tags={['C++', 'Python', 'Stockfish', 'Native Bridge', 'Performance Optimization']}
+          source="https://github.com/tawfiqkhalilieh/stockfish-native"
           live={undefined}
-          source="https://github.com/tawfiqkhalilieh/chessCheater"
-
         />
         <ProjectCard
-          imgSrc="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Ognian_Mikov/phplGwPHq.png"
-          title="Chess Hinter"
-          description={['A client that monitors games while being played. Once it detects that you\'re stuck, it gives you a hint on the board', 'It still works on the chess.com board!', "It is 100% undetectable"]}
-          tags={['Selenium', 'Python', 'Stockfish', 'Chess']}
+          imgSrc="./img.png"
+          title="chessCheaterPlus"
+          description={['An automation suite that simulates entire player activity on chess.com, from basic games to solving puzzles.', 'Includes "Chess Hinter" as a side project—a client that monitors games in real-time to provide board-level suggestions.', 'I built this when I was 16 years old to explore automation and chess engines.', 'The advanced version was shutdown following a request from a chess.com community manager.'
+          ]}
+          tags={['Selenium', 'Python', 'Stockfish', 'Automation', 'Chess Engine']}
           live={undefined}
           source="https://github.com/tawfiqkhalilieh/chessCheater"
-
         />
       </div>
     </div>
